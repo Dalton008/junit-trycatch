@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <File name="MistakeEnteringStation" fileName="logs/mistakeEnteringStation.log">
+            <PatternLayout pattern="%d{yyyy-mm-dd HH:MM:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="EnteringStation" fileName="logs/enteringStation.log">
+            <PatternLayout pattern="%d{yyyy-mm-dd HH:MM:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="Error" fileName="logs/error.log">
+            <PatternLayout pattern="%d{yyyy-mm-dd HH:MM:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </appenders>
+
+    <loggers>
+        <logger name ="enteringStation" level="info">
+            <appender-ref ref="EnteringStation" level="info"/>
+        </logger>
+        <logger name ="mistakeEnteringStation" level="info">
+            <appender-ref ref="MistakeEnteringStation" level="info"/>
+        </logger>
+        <logger name ="error" level="error">
+            <appender-ref ref="Error" level="error"/>
+        </logger>
+        <root level="debug">
+<!--            <appender-ref ref="MyFile" level="warn"/>-->
+<!--            <appender-ref ref="MyFile1" level ="info"/>-->
+        </root>
+    </loggers>
+</configuration>
